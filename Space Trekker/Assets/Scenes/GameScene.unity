@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44951904, g: 0.49651593, b: 0.55915195, a: 1}
+  m_IndirectSpecularColor: {r: 0.4495194, g: 0.49651664, b: 0.5591524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -656,6 +656,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62ea8a5ca94c546f29ba6dea8f379a7b, type: 3}
+--- !u!1 &1492770042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 62ea8a5ca94c546f29ba6dea8f379a7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1409845224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1492770044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492770042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98aa904f9a51e4cd6934ac76cdf5f836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 1317018285}
+  RotateSpeed: 3
 --- !u!1 &1595770273
 GameObject:
   m_ObjectHideFlags: 0
