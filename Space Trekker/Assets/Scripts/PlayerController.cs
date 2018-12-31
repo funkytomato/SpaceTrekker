@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Transform shotSpawn;
 
     public float Thrust;
-    public float Tilt;
+    //public float Tilt;
 
     public float FireRate;
 
@@ -36,9 +36,6 @@ public class PlayerController : MonoBehaviour
             //Create the bolt
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         }
-
-
-
     }
 
     //Update for PhysicBodies
@@ -48,7 +45,5 @@ public class PlayerController : MonoBehaviour
 
         applyThrust = applyThrust * Thrust;
         transform.position += transform.forward * Time.deltaTime * applyThrust;
-
-        //rb2d.rotation = Quaternion.Euler(0.0f, 0.0f, rb2d.velocity.x * -tilt);
     }
 }

@@ -344,7 +344,6 @@ MonoBehaviour:
   shot: {fileID: 3696041416554396655, guid: c00dccb9c165c49beafb4f01ca8464bd, type: 3}
   shotSpawn: {fileID: 1695438811}
   Thrust: 10
-  Tilt: 3
   FireRate: 0.25
 --- !u!50 &811040085
 Rigidbody2D:
@@ -367,6 +366,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &811040086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811040082}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be316fa9433eb410089ec0e959942b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TiltAngle: 35
 --- !u!4 &811040088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7,
@@ -751,7 +763,6 @@ MonoBehaviour:
   shot: {fileID: 3696041416554396655, guid: c00dccb9c165c49beafb4f01ca8464bd, type: 3}
   shotSpawn: {fileID: 1692197196}
   Thrust: 10
-  Tilt: 3
   FireRate: 0.25
 --- !u!4 &1317018285 stripped
 Transform:
