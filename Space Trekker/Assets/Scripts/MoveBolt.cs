@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveController : MonoBehaviour
+public class MoveBolt : MonoBehaviour
 {
-
     public float Speed;
 
     private Rigidbody rb;
@@ -18,11 +17,6 @@ public class MoveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.velocity = transform.forward * Speed;
-    }
-
-    private void FixedUpdate()
-    {
-        rb.velocity = Vector3.forward * Speed;
+        rb.velocity = transform.forward * Speed;
     }
 }

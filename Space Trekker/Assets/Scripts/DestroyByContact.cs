@@ -24,7 +24,7 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "Bolt")
+        if (other.tag == "Boundary")
         {
             Debug.Log("other is triggered!");
             return;
@@ -37,11 +37,15 @@ public class DestroyByContact : MonoBehaviour
 
         if (other.tag == "Player")
         {
+
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             //gameController.GameOver();
         }
 
+        Debug.Log("Destroyed " + other.gameObject);
         Destroy(other.gameObject);
+
+        Debug.Log("Destroyed " + gameObject);
         Destroy(gameObject);
     }
 }
