@@ -26,7 +26,7 @@ public class DestroyByContact : MonoBehaviour
     {
         if (other.tag == "Boundary")
         {
-            Debug.Log("DestroyByContact collider: " + other.name + " is triggered!");
+            //Debug.Log("DestroyByContact collider: " + other.name + " is triggered!");
             return;
         }
 
