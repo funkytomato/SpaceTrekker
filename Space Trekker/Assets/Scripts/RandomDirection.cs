@@ -17,8 +17,10 @@ public class RandomDirection : MonoBehaviour
         //Debug.Log("RandomDirection Start:" + transform.eulerAngles);
 
 
-        transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        //transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
         //transform.forward = Vector3.forward * Speed;
+
+        transform.forward = RandomInCone(360) * 1.0f;
 
     }
 
