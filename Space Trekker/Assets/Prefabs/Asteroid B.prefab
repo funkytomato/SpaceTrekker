@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1358094733097192704}
   - component: {fileID: 1358094733097192717}
   - component: {fileID: 1358094733097192716}
+  - component: {fileID: 7814330377534772538}
   m_Layer: 0
   m_Name: Asteroid B
   m_TagString: Enemy
@@ -106,6 +107,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 3}
+--- !u!114 &7814330377534772538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358094733097192711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45b711010e5149a79bf69989891381c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1358094732371016919
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 161648174}
-  Zoom: 8
+  Zoom: 12
 --- !u!1 &811040082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d9808401c68af274a8edfbed3d1b53c7,
@@ -913,9 +913,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazard: {fileID: 1358094733097192711, guid: d8101d7a9763e4874961b775cf52a384, type: 3}
-  spawnValues: {x: 0, y: 0, z: 0}
+  spawnValues: {x: 0, y: 0, z: 10}
   hazardCount: 1
-  spawnWait: 10
+  spawnWait: 4
   startWait: 1
   waveWait: 1
 --- !u!4 &921273540
@@ -926,7 +926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921273538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0, z: 7.95}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

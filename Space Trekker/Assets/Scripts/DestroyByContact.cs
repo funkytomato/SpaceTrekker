@@ -26,7 +26,7 @@ public class DestroyByContact : MonoBehaviour
     {
         if (other.tag == "Boundary")
         {
-            Debug.Log("other is triggered!");
+            Debug.Log("DestroyByContact collider: " + other.name + " is triggered!");
             return;
         }
 
@@ -35,7 +35,7 @@ public class DestroyByContact : MonoBehaviour
             Instantiate(explosion, transform.position, transform.rotation);
         }
 
-        if (other.tag == "Player")
+        if (other.tag == "DestroyByContact collider is Player")
         {
 
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
