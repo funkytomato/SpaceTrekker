@@ -35,17 +35,17 @@ public class DestroyByContact : MonoBehaviour
             Instantiate(explosion, transform.position, transform.rotation);
         }
 
-        if (other.tag == "DestroyByContact collider is Player")
+        if (other.tag == "Player")
         {
 
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
             //gameController.GameOver();
         }
 
-        Debug.Log("Destroyed " + other.gameObject);
+        Debug.Log("DestroyByContact OnTriggerEnter:- Destroyed " + other.gameObject);
         Destroy(other.gameObject);
 
-        Debug.Log("Destroyed " + gameObject);
+        Debug.Log("DestroyByContact OnTriggerEnter:- " + gameObject);
         Destroy(gameObject);
     }
 }
