@@ -7,6 +7,7 @@ public class RandomDirection : MonoBehaviour
     //private Transform transform;
     public GameObject Boundary;
     public float Speed;
+    private Vector3 destination;
 
     private Rigidbody rb;
 
@@ -19,22 +20,26 @@ public class RandomDirection : MonoBehaviour
         //rb.rotation = Quaternion.LookRotation(RandomInCone(20));
 
         Debug.Log("RandomDirection Start- rigidbody rotation : " + rb.rotation);
-        Vector3 position = RandomPointInBox(Vector3.zero, Boundary.transform.localScale);
-        rb.rotation = Quaternion.LookRotation(position, Vector3.forward);
-        Debug.Log("RandomDirection Start position: " + position + "rotation : " + rb.rotation);
+        destination = RandomPointInBox(Vector3.zero, Boundary.transform.localScale);
+        rb.rotation = Quaternion.LookRotation(destination, Vector3.forward);
+        //rb.rotation = Quaternion.LookRotation(position);
+        Debug.Log("RandomDirection Start position: " + destination + "rotation : " + rb.rotation);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // The step size is equal to speed times frame time.
+        float step = Speed * Time.deltaTime;
+
+        // Move our position a step closer to the target.
+        transform.position = Vector3.MoveTowards(transform.position, destination, step);
     }
 
     private void FixedUpdate()
     {
-        //rb.velocity = Vector3.forward * Speed;
-        rb.velocity = transform.forward * Speed;
+
     }
 
     public static Vector3 RandomInCone(float radius)

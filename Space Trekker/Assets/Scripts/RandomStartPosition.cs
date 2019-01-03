@@ -13,7 +13,8 @@ public class RandomStartPosition : MonoBehaviour
     {
 
         Vector3 position = RandomPointInBox(Vector3.zero, Boundary.transform.localScale);
-        Instantiate(prefab, position, Quaternion.identity);
+        transform.position = position;
+        //Instantiate(prefab, position, Quaternion.identity);
     }
 
     // Update is called once per frame

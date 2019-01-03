@@ -10,6 +10,8 @@ public class TumbleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //This does not with the RandomDirection script!!!
         GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * Tumble;
+        //transform.angularVelocity = Random.insideUnitSphere * Tumble;
     }
 }
