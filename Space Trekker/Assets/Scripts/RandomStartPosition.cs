@@ -12,16 +12,7 @@ public class RandomStartPosition : MonoBehaviour
     void Start()
     {
 
-
-        //Instantiate(gameObject, Vector3(Random.Range(minY, maxY),
-        //Random.Range(minZ, maxZ),
-        //Random.Range(minX, maxX), Quaternion.identity));
-
-
-
         Vector3 position = RandomPointInBox(Vector3.zero, Boundary.transform.localScale);
-
-        //Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
         Instantiate(prefab, position, Quaternion.identity);
     }
 
