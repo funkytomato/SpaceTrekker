@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomDirection : MonoBehaviour
 {
     //private Transform transform;
-
+    public GameObject Boundary;
     public float Speed;
 
     private Rigidbody rb;
@@ -15,17 +15,13 @@ public class RandomDirection : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        //Vector3 euler = transform.eulerAngles;
-        //euler.z = Random.Range(0f, 360f);
-        //transform.eulerAngles = euler;
-        //Debug.Log("RandomDirection Start:" + transform.eulerAngles);
+        //transform.rotation = Quaternion.LookRotation(RandomInCone(360));
+        //rb.rotation = Quaternion.LookRotation(RandomInCone(20));
 
-
-        //transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-        //transform.forward = Vector3.forward * Speed;
-
-        //transform.forward = RandomInCone(360) * 1.0f;
-        transform.rotation = Quaternion.LookRotation(RandomInCone(360));
+        Debug.Log("RandomDirection Start- rigidbody rotation : " + rb.rotation);
+        Vector3 position = RandomPointInBox(Vector3.zero, Boundary.transform.localScale);
+        rb.rotation = Quaternion.LookRotation(position, Vector3.forward);
+        Debug.Log("RandomDirection Start position: " + position + "rotation : " + rb.rotation);
 
     }
 
@@ -37,7 +33,8 @@ public class RandomDirection : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = Vector3.forward * Speed;
+        //rb.velocity = Vector3.forward * Speed;
+        rb.velocity = transform.forward * Speed;
     }
 
     public static Vector3 RandomInCone(float radius)
@@ -47,5 +44,16 @@ public class RandomDirection : MonoBehaviour
         float z = Random.Range(Mathf.Cos(radradius), 1);
         float t = Random.Range(0, Mathf.PI * 2);
         return new Vector3(Mathf.Sqrt(1 - z * z) * Mathf.Cos(t), Mathf.Sqrt(1 - z * z) * Mathf.Sin(t), z);
+    }
+
+
+    private static Vector3 RandomPointInBox(Vector3 center, Vector3 size)
+    {
+
+        return center + new Vector3(
+           (Random.value - 0.5f) * size.x,
+           (Random.value - 0.5f) * size.y,
+           (Random.value - 0.5f) * size.z
+        );
     }
 }
