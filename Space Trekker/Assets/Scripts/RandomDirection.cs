@@ -6,11 +6,15 @@ public class RandomDirection : MonoBehaviour
 {
     //private Transform transform;
 
-    //private Rigidbody rb;
+    public float Speed;
+
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         //Vector3 euler = transform.eulerAngles;
         //euler.z = Random.Range(0f, 360f);
         //transform.eulerAngles = euler;
@@ -20,7 +24,8 @@ public class RandomDirection : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
         //transform.forward = Vector3.forward * Speed;
 
-        transform.forward = RandomInCone(360) * 1.0f;
+        //transform.forward = RandomInCone(360) * 1.0f;
+        transform.rotation = Quaternion.LookRotation(RandomInCone(360));
 
     }
 
@@ -28,6 +33,11 @@ public class RandomDirection : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = Vector3.forward * Speed;
     }
 
     public static Vector3 RandomInCone(float radius)

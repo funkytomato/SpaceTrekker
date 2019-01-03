@@ -32,7 +32,9 @@ public class GameController : MonoBehaviour
         {
             for (int i = 0; i < hazardCount; i++)
             {
+                //Vector3 spawnPosition = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(hazard, spawnPosition, spawnRotation);
 
@@ -40,5 +42,14 @@ public class GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
         }
+    }
+
+    public static Vector3 RandomInCone(float radius)
+    {
+        //(sqrt(1 - z^2) * cosϕ, sqrt(1 - z^2) * sinϕ, z)
+        float radradius = radius * Mathf.PI / 360;
+        float z = Random.Range(Mathf.Cos(radradius), 1);
+        float t = Random.Range(0, Mathf.PI * 2);
+        return new Vector3(Mathf.Sqrt(1 - z * z) * Mathf.Cos(t), Mathf.Sqrt(1 - z * z) * Mathf.Sin(t), z);
     }
 }
