@@ -26,7 +26,7 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Boundary" || other.tag = "Asteroid")
+        if (other.tag == "Boundary" || other.tag == "Asteroid")
         {
             //Debug.Log("DestroyByContact collider: " + other.name + " is triggered!");
             return;
