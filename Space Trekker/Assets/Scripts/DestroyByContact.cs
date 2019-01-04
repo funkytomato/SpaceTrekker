@@ -11,6 +11,8 @@ public class DestroyByContact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("DestroyByContact Start");
+
         GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -24,7 +26,7 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Boundary")
+        if (other.tag == "Boundary" || other.tag = "Asteroid")
         {
             //Debug.Log("DestroyByContact collider: " + other.name + " is triggered!");
             return;
